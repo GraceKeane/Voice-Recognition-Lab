@@ -1,0 +1,78 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<grammar version="1.0" xml:lang="en-US" mode="voice"
+root="toplevel" tag-format="semantics/1.0"
+xmlns="http://www.w3.org/2001/06/grammar" >
+
+
+
+<rule id="toplevel" scope="public">
+<one-of>
+<item>
+<ruleref uri="#playstate" />
+</item>
+<item>
+<ruleref uri="#movestate" />
+</item>
+</one-of>
+</rule>
+
+
+
+<rule id="playstate">
+<one-of>
+<item>
+<tag>out.action = "new";</tag>
+<one-of>
+<item> Start a new game </item>
+<item> Begin a new game </item>
+<item> New game </item>
+<item> I want to play </item>
+</one-of>
+</item>
+<item>
+<tag>out.action = "quit";</tag>
+<one-of>
+<item> finish the game </item>
+<item> exit game </item>
+<item> I give up </item>
+</one-of>
+</item>
+</one-of>
+</rule>
+
+
+
+<rule id="movestate">
+<tag>out.action="position"; </tag>
+<one-of>
+<item> place </item>
+<item> move </item>
+</one-of>
+<ruleref uri="#moveoptions" />
+<tag>out.Player = rules.latest();</tag>
+<one-of>
+<item> at </item>
+<item> to </item>
+</one-of>
+<ruleref uri="#moveoptions" />
+<tag>out.Row = rules.latest();</tag>
+<ruleref uri="#moveoptions" />
+<tag>out.Column = rules.latest();</tag>
+</rule>
+
+
+
+<rule id="moveoptions">
+<one-of>
+<item> X </item>
+<item> O </item>
+<item> Top </item>
+<item> Middle </item>
+<item> Bottom </item>
+<item> Left </item>
+<item> Center </item>
+<item> Right </item>
+</one-of>
+</rule>
+</grammar>

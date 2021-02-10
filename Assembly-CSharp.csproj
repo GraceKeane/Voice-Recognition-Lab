@@ -36,7 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\crossHair.cs" />
+     <Compile Include="Assets\Grammar Rec\GrammarController.cs" />
+     <Compile Include="Assets\Voice Rec\crossHair.cs" />
+     <None Include="Assets\StreamingAssets\SimpleGrammar.xml" />
+     <None Include="Assets\Streaming Assets\SimpleGrammar.xml" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

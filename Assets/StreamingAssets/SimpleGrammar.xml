@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grammar xml:lang="en"
+        tag-format="semantics/1.0"
+        version="1.0"
+        xmlns="http://www.w3.org/2001/06/grammar"
+        root="yesorno">
+    
+    <rule id="yesorno">
+        <one-of>
+            <item>
+                <ruleref uri = "#yes" />
+            </item>
+            <item>
+                <ruleref uri = "#no" />
+            </item>
+        </one-of>
+    </rule>
+
+    <rule id="yes">
+        <one-of>
+            <item>yes</item>
+            <item>yep</item>
+            <item>sure</item>
+            <item>ok</item>
+            <item>affirmative</item>
+        </one-of>
+    </rule>
+
+    <rule id="no">
+        <one-of>
+            <item>no</item>
+            <item>never</item>
+            <item>not a chance</item>
+            <item>no way</item>
+        </one-of>
+    </rule>
+
+</grammar>
